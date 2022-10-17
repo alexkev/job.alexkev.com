@@ -2,10 +2,12 @@ import React from 'react';
 import profile from './images/profile-pic.png';
 import { Button } from './components/Button';
 import styled from 'styled-components';
+import { CopyToClipboardButton } from './components/CopyToClipboardButton';
+import { ThemeContext } from './theme-context';
 
-const Contianer = styled.div`
+const Contianer = styled.div<{ backgroundColor: string }>`
   text-align: center;
-  background-color: #282c34;
+  background-color: ${(props) => `${props.backgroundColor}`};
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,29 +24,34 @@ const ProfilePic = styled.img`
 `
 
 function App() {
+  const { theme } = React.useContext(ThemeContext);
+  console.log('%cApp.tsx line:28 theme', 'color: #007acc;', theme);
+
   return (
-    <Contianer>
+    <Contianer backgroundColor={theme.backgroundColor}>
       <ProfilePic src={profile} alt="logo" />
       <Button
         ariaLabel={"Download My Resume!"}
         text={"RÉSUMÉ"}
         hoverText={"DOWNLOAD"}
+        href="/Alex_Matheson_Resume.pdf"
         />
       <Button
         ariaLabel={"GO TO LINKEDIN"}
         text={"LINKEDIN"}
         hoverText={"GO TO LINKEDIN"}
+        href="https://www.linkedin.com/in/alexkev/"
         />
       <Button
         ariaLabel={"Navigate to Github"}
         text={"GITHUB"}
         hoverText={"SEE MY CODE"}
+        href="https://github.com/alexkev"
         />
-      {/* <Button
-        ariaLabel={"Copy Email to Clipboard"}
+      <CopyToClipboardButton
         text={"alex.kmatheson@gmail.com"}
-        hoverText={"COPY TO CLIPBOARD"}
-        /> */}
+        hoverText={"CLICK TO COPY"}
+        />
     </Contianer>
   );
 }
