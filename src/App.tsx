@@ -8,7 +8,6 @@ import { CirclePicker } from 'react-color';
 import Slider from 'react-color/lib/components/slider/Slider';
 import useWindowDimensions from './hooks/useWindowDimensions';
 import { Link } from './components/Link';
-import Pdf from './documents/Alex_Matheson_Resume_2022.pdf';
 
 const Contianer = styled.div<{ backgroundColor: string; height: number; width: number}>`
   text-align: center;
@@ -82,7 +81,7 @@ function App() {
         ariaLabel={"Download My Resume!"}
         text={"RÉSUMÉ"}
         hoverText={"DOWNLOAD"}
-        href={Pdf}
+        href={process.env.PUBLIC_URL + "/Alex_Matheson_Resume_2022.pdf"}
         />
       <Button
         ariaLabel={"GO TO LINKEDIN"}
