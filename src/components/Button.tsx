@@ -29,11 +29,14 @@ const StyledButton = styled.a<Omit<Props, "ariaLabel"> & ThemeType>`
   &:before {
     content: ${(props) => `"${props.text}"`};
   }
-  &:hover:before {
-    content: ${(props) => `"${props.hoverText ?? props.text}"`};
-  }
-  &:hover {
-    box-shadow: 0.1em 0.2em 0.2em 0.1em ${(props) => `${props.primaryBoxShadow}`}
+  @media (hover: hover) {
+    /* targets screens that hover */
+    &:hover:before {
+      content: ${(props) => `"${props.hoverText ?? props.text}"`};
+    }
+    &:hover {
+      box-shadow: 0.1em 0.2em 0.2em 0.1em ${(props) => `${props.primaryBoxShadow}`}
+    }
   }
   @media (min-width: 600px) {
     width: 20rem;
