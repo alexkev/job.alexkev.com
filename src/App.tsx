@@ -116,7 +116,7 @@ function App() {
         </SilderContainer>
         <Link
           text={"view code"}
-          href="https://github.com/alexkev"
+          href="https://github.com/alexkev/alexkev.com"
           />
       </ColorContainer>
     </Contianer>

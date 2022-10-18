@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styled from 'styled-components';
+import { copyToClipboard } from '../utils/copyToClipboard';
 
 type Props = {
   text: string;
@@ -32,8 +33,8 @@ export const CopyToClipboardButton = ({ text, ...rest }: Props) => {
   const [ wasCopied, setWasCopied ] = useState(false);
   return (
     <StyledButton
-      onClick={() => {
-        navigator.clipboard.writeText(text);
+      onClick={async () => {
+        await copyToClipboard(text);
         setWasCopied(true);
         setTimeout(() => setWasCopied(false), 3000);
       }}
