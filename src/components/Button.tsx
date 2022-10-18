@@ -25,7 +25,7 @@ const StyledButton = styled.a<Omit<Props, "ariaLabel"> & ThemeType>`
   padding: 2vh;
   text-decoration: none;
   transition: box-shadow 0.3s;
-  width: 20rem;
+  width: 15rem;
   &:before {
     content: ${(props) => `"${props.text}"`};
   }
@@ -36,14 +36,13 @@ const StyledButton = styled.a<Omit<Props, "ariaLabel"> & ThemeType>`
     box-shadow: 0.1em 0.2em 0.2em 0.1em ${(props) => `${props.primaryBoxShadow}`}
   }
   @media (min-width: 600px) {
-    width: 30rem;
+    width: 20rem;
+    font-size: 1em;
   }
 `;
 
 export const Button = ({ ariaLabel, href, ...rest }: Props) => {
   const { theme } = React.useContext(ThemeContext);
-  console.log('%cButton.tsx line:45 theme', 'color: #007acc;', theme);
-
   return (
     <StyledButton 
       aria-label={ariaLabel} 

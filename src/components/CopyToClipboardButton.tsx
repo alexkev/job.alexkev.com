@@ -16,7 +16,6 @@ const StyledButton = styled.a<Props & { wasCopied: boolean }>`
   margin: 1vh 0;
   padding: 2vh;
   pointer-events: ${(props) => props.wasCopied ? "none" : "auto"};
-  text-decoration-color: 'aqua';
   text-decoration: ${(props) => props.wasCopied ? "none" : "underline"};
   &:before {
     content: ${(props) => props.wasCopied ? `"COPIED!"` : `"${props.text}"`};
