@@ -22,6 +22,7 @@ const StyledLink = styled.a<Props>`
 
 export const Link = ({ text, href }: Props) => (
   <StyledLink
+    target="_blank" 
     text={text}
     href={href}
     />
