@@ -8,6 +8,9 @@ import { CirclePicker } from 'react-color';
 import Slider from 'react-color/lib/components/slider/Slider';
 import useWindowDimensions from './hooks/useWindowDimensions';
 import { Link } from './components/Link';
+import download from './images/download.svg';
+import linkedin from './images/linkedin.svg';
+import github from './images/github.svg';
 
 const Contianer = styled.div<{ backgroundColor: string; height: number; width: number}>`
   text-align: center;
@@ -82,18 +85,21 @@ function App() {
         text={"RÉSUMÉ"}
         hoverText={"DOWNLOAD"}
         href={process.env.PUBLIC_URL + "/Alex_Matheson_Resume_2022.pdf"}
+        svg={download}
         />
       <Button
         ariaLabel={"GO TO LINKEDIN"}
         text={"LINKEDIN"}
         hoverText={"GO TO LINKEDIN"}
         href="https://www.linkedin.com/in/alexkev/"
+        svg={linkedin}
         />
       <Button
         ariaLabel={"Navigate to Github"}
         text={"GITHUB"}
         hoverText={"SEE MY CODE"}
         href="https://github.com/alexkev"
+        svg={github}
         />
       <CopyToClipboardButton
         text={"alex.kmatheson@gmail.com"}
