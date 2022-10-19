@@ -21,11 +21,14 @@ const StyledButton = styled.a<Props & { wasCopied: boolean }>`
   &:before {
     content: ${(props) => props.wasCopied ? `"COPIED!"` : `"${props.text}"`};
   }
-  &:hover {
-    :before {
-      content: ${(props) => props.wasCopied ? `"COPIED!"` : `"CLICK TO COPY"`};;
+  @media (hover: hover) {
+    /* targets screens that hover */
+    &:hover {
+      :before {
+        content: ${(props) => props.wasCopied ? `"COPIED!"` : `"CLICK TO COPY"`};;
+      }
+      text-decoration: none;
     }
-    text-decoration: none;
   }
 `;
 
