@@ -84,7 +84,7 @@ function App() {
         ariaLabel={"Download My Resume!"}
         text={"RÉSUMÉ"}
         hoverText={"DOWNLOAD"}
-        href={process.env.PUBLIC_URL + "/Alex_Matheson_Resume_2022.pdf"}
+        href={process.env.PUBLIC_URL + "/Alex_Matheson_Resume_2023.docx"}
         svg={download}
         />
       <Button
