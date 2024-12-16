@@ -12,7 +12,7 @@ import download from './images/download.svg';
 import linkedin from './images/linkedin.svg';
 import github from './images/github.svg';
 
-const Contianer = styled.div<{ backgroundColor: string; height: number; width: number}>`
+const Contianer = styled.div<{ backgroundColor: string; height: number; width: number }>`
   text-align: center;
   background-color: ${(props) => `${props.backgroundColor}`};
   height: ${(props) => `${props.height}px`};
@@ -73,37 +73,37 @@ function App() {
   const { height, width } = useWindowDimensions();
 
   return (
-    <Contianer 
-      backgroundColor={theme.backgroundColor} 
+    <Contianer
+      backgroundColor={theme.backgroundColor}
       height={height}
       width={width}
-      >
+    >
       <Menu>
-      <ProfilePic src={profile} alt="logo" />
-      <Button
-        ariaLabel={"Download My Resume!"}
-        text={"RÉSUMÉ"}
-        hoverText={"DOWNLOAD"}
-        href={process.env.PUBLIC_URL + "/Alex_Matheson_Resume_2023.pdf"}
-        svg={download}
+        <ProfilePic src={profile} alt="logo" />
+        <Button
+          ariaLabel={"Download My Resume!"}
+          text={"RÉSUMÉ"}
+          hoverText={"DOWNLOAD"}
+          href={process.env.PUBLIC_URL + "/Alex_Matheson_Resume.pdf"}
+          svg={download}
         />
-      <Button
-        ariaLabel={"GO TO LINKEDIN"}
-        text={"LINKEDIN"}
-        hoverText={"GO TO LINKEDIN"}
-        href="https://www.linkedin.com/in/alexkev/"
-        svg={linkedin}
+        <Button
+          ariaLabel={"GO TO LINKEDIN"}
+          text={"LINKEDIN"}
+          hoverText={"GO TO LINKEDIN"}
+          href="https://www.linkedin.com/in/alexkev/"
+          svg={linkedin}
         />
-      <Button
-        ariaLabel={"Navigate to Github"}
-        text={"GITHUB"}
-        hoverText={"SEE MY CODE"}
-        href="https://github.com/alexkev"
-        svg={github}
+        <Button
+          ariaLabel={"Navigate to Github"}
+          text={"GITHUB"}
+          hoverText={"SEE MY CODE"}
+          href="https://github.com/alexkev"
+          svg={github}
         />
-      <CopyToClipboardButton
-        text={"alex.kmatheson@gmail.com"}
-        hoverText={"CLICK TO COPY"}
+        <CopyToClipboardButton
+          text={"alex.kmatheson@gmail.com"}
+          hoverText={"CLICK TO COPY"}
         />
       </Menu>
       <ColorContainer>
@@ -112,20 +112,20 @@ function App() {
           colors={presetColors}
           onChange={(color) => setActiveColor(color.hex)}
           onChangeComplete={(color) => updateTheme(color.rgb)}
-          />
+        />
         <SilderContainer>
           <Slider
             color={activeColor}
             onChange={(color) => setActiveColor(color.hex)}
             onChangeComplete={(color) => updateTheme(color.rgb)}
-            />
+          />
         </SilderContainer>
         <Link
           text={"view code"}
           href="https://github.com/alexkev/alexkev.com"
-          />
+        />
       </ColorContainer>
-      
+
     </Contianer>
   );
 }
